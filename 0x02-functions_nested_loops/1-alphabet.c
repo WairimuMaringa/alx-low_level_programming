@@ -1,19 +1,19 @@
 #include "main.h"
 
 /**
- * main - entry point
+ * print_alphabet - print alphabet lowercase
  *
  * Return: Always 0 (Success)
  */
-int main(void)
-{
-	int i;
 
-	for (i = 97; i <= 122; i++)
+void print_alphabet(void)
+{
+	char alphabet;
+
+	for (alphabet = 97; alphabet <= 122; alphabet++)
 	{
-		_putchar(i);
+		_putchar(alphabet);
 	}
 	_putchar('\n');
 
-	return (0);
 }
