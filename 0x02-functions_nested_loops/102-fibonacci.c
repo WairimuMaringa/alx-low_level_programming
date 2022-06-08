@@ -16,6 +16,8 @@ int main(void)
 
 	c = a + b;
 
+	x = 2;
+
 	printf("%ld, %ld", a, b);
 
 		while (x < 50)
