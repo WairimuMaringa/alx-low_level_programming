@@ -8,28 +8,23 @@
  */
 int main(void)
 {
-	float a = 1;
+	int a, b, x, z;
+	int k;
 
-	float b = a + 1;
+	z = 98;
 
-	float c = a + b;
-
-	int x = 0;
-
-	printf("%.0f, ", a);
-	printf("%.0f, ", b);
-
-	while (x < 98)
+	for (x = 1; x <= z; x++)
 	{
-		x++;
-		printf("%.0f", c);
-		a = b;
-		b = c;
-		c = a + b;
-
-		if (x < 98)
+		if (x == 98)
 		{
-			printf(", ");
+			printf("%d, ", b);
+		}
+		else
+		{
+			printf("%d, ", b);
+			k = a + b;
+			a = b;
+			b = k;
 		}
 	}
 	printf("\n");
