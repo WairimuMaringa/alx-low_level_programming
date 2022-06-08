@@ -24,13 +24,19 @@ void print_times_table(int n)
 				if (pr <= 9)
 				{
 					_putchar(32);
+					_putchar(32);
+					_putchar(pr + 48);
+				}
+				else if (pr <= 99)
+				{
+					_putchar(32);
 					_putchar((pr / 10) + 48);
 					_putchar((pr % 10) + 48);
 				}
 				else
 				{
-					_putchar(((pr / 100) % 10) + 48);
-					_putchar(((pr / 10) % 10) + 48);
+					_putchar((pr / 100) + 48);
+					_putchar(((pr / 100) / 10) + 48);
 					_putchar((pr % 10) + 48);
 				}
 			}
