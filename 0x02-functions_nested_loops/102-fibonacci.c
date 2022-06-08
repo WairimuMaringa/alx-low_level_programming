@@ -19,7 +19,7 @@ int main(void)
 
 	x = 2;
 
-	printf("%ld, %ld", a, b);
+	printf("%ld, %ld, ", a, b);
 
 		while (x < 50)
 		{
