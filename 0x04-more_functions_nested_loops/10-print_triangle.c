@@ -1,0 +1,28 @@
+#include "main.h"
+
+/**
+ * print_triangle - print a triangle
+ * @size: size of triangle
+ *
+ * Return: Always 0
+ */
+
+void print_triangle(int size)
+{
+	int x, y, z;
+
+	for (x = 0; x < size; x++)
+	{
+		for (y = 1; y < (size - x); y++)
+		{
+			_putchar(32);
+		}
+		for (z = 0; z <= x; z++)
+		{
+			_putchar(35);
+		}
+		_putchar(10);
+	}
+	if (size <= 0)
+		_putchar(10);
+}
