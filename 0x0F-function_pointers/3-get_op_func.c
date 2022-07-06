@@ -22,11 +22,12 @@ int (*get_op_func(char *s))(int, int)
 	int x;
 
 	x = 0;
-	while (x < 5)
+	while (ops[x].f != NULL)
 	{
-		if (s[0] == ops[x].op[0])
+		if (*s == *(ops[x].op) && s[1] == '\0')
 			return (ops[x].f);
 		x++;
 	}
-	return (NULL);
+	printf("Error\n");
+	exit(99);
 }
