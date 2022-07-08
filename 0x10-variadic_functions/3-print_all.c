@@ -4,55 +4,46 @@
 /**
  * print_c - prints a character
  * @arg: arguments
+ * @sep: separator
  */
-void print_c(va_list arg)
+void print_c(va_list arg, char *sep)
 {
-	char letter;
-	letter = va_arg(arg, int);
-
-	printf("%c", letter);
+	printf("%s%c", sep, va_arg(arg, int));
 }
 /**
  * print_i - prints an integer
  * @arg: arguments
+ * @s: separator
  */
-void print_i(va_list arg)
+void print_i(va_list arg, char *s)
 {
-	int num;
-	num = va_arg(arg, int);
-
-	printf("%d", num);
+	printf("%s%d", s, va_arg(arg, int));
 }
 /**
  * print_f - prints a float
  * @arg: arguments
+ * @sep: separator
  */
-void print_f(va_list arg)
+void print_f(va_list arg, char *sep)
 {
-	float num;
-	num = va_arg(arg, double);
-
-	printf("%f", num);
+	printf("%s%f", sep, va_arg(arg, double));
 }
 /**
  * print_str - prints a string
  * @arg: arguments
+ * @sep: separator
  */
-void print_str(va_list arg)
+void print_str(va_list arg, char *sep)
 {
 	char *strng;
 	strng = va_arg(arg, char *);
 	if (strng == NULL)
-	{
-		printf("(nil)");
-		return;
-	}
-	printf("%s", strng);
+		strng = "(nil)";
+	printf("%s%s", sep, strng);
 }
 /**
  * print_all - function that prints anything
  * @format: list of types of arguments to be passed
- * @...: variable number of arguments
  */
 void print_all(const char * const format, ...)
 {
@@ -60,7 +51,7 @@ void print_all(const char * const format, ...)
 	int i = 0, j = 0;
 	char *separator = "";
 	char *separator2 = ", ";
-	printer ops[] = {
+	struct (op[]) = {
 		{"c", print_c},
 		{"i", print_i},
 		{"f", print_f},
@@ -71,12 +62,12 @@ void print_all(const char * const format, ...)
 	while (format != NULL && format[i])
 	{
 		j = 0;
-		while (ops[j].f != NULL)
+		while (op[j].f != NULL)
 		{
-			if (format[i] == *(ops[j].c))
+			if (format[i] == *(op[j].c))
 			{
 				printf("%s", separator);
-				ops[j].f(args);
+				op[j].f(args);
 			}
 			j++;
 		}
