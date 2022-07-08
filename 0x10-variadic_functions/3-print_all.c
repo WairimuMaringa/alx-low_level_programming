@@ -52,11 +52,11 @@ void print_all(const char * const format, ...)
 	char *separator = "";
 	char *separator2 = ", ";
 	struct (op[]) = {
-		{"c", print_c},
-		{"i", print_i},
-		{"f", print_f},
-		{"s", print_str},
-		{NULL, NULL}
+		{'c', print_c},
+		{'i', print_i},
+		{'f', print_f},
+		{'s', print_str},
+		{'\0', NULL}
 	};
 	va_start(args, format);
 	while (format != NULL && format[i])
